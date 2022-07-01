@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Category</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="woman_text">Woman</string>
+    <string name="woman_about_text">Women in politics</string>
+    <string name="woman_more_text">Women are underrepresented in government in most countries. In January 2019, the global average of women in national assemblies was 24.3%</string>
+    <string name="man_text">Man</string>
+    <string name="man_more_text">The Mars symbol (♂) is a common symbol that represents the male sex.</string>
+    <string name="man_about_text">Sex symbol</string>
+    <string name="baby_text">Baby</string>
+    <string name="baby_more_text">the umbilical cord falls off and the navel heals completely (1–4 weeks)
+the circumcision heals (1–2 weeks)
+</string>
+    <string name="baby_about_text">Bathing Basics</string>
+    <string name="travel_text">Travel</string>
+    <string name="travel_more_text">Travel may be local, regional, national (domestic) or international. In some countries, non-local internal travel may require an internal passport, while international travel typically requires a passport and visa.</string>
+    <string name="travel_about_text">Geographic types</string>
+    <string name="food_drink_text"><![CDATA[Food & Drink]]></string>
+    <string name="food_drink_more_text">Food</string>
+    <string name="food_drink_about_text">Food is usually of plant, animal, or fungal origin, and contains essential nutrients, such as carbohydrates, fats, proteins, vitamins, or minerals.</string>
+    <string name="technic_text">Technic</string>
+    <string name="technic_about_text">Technical Expertise</string>
+    <string name="technic_more_text">For 75 years, Technic has been a global supplier of specialty chemicals</string>
+    <string name="go_back_text">Go back</string>
+</resources>

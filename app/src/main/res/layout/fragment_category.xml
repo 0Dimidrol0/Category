@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Category_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".Fragments.CategoryFragment">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_Woman"
+        style="@style/Category_text_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@mipmap/ic_woman_foreground"
+        android:background="@color/women_bg"
+        android:text="@string/woman_text"
+        app:layout_constraintHeight_percent="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_Man"
+        style="@style/Category_text_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@mipmap/ic_man_icon_foreground"
+        android:background="@color/man_bg"
+        android:text="@string/man_text"
+        app:layout_constraintStart_toEndOf="@id/tv_Woman"
+        app:layout_constraintTop_toTopOf="@id/tv_Woman"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_Woman" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_Baby"
+        style="@style/Category_text_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@mipmap/ic_baby_foreground"
+        android:background="@color/baby_bg"
+        android:text="@string/baby_text"
+        app:layout_constraintHeight_percent="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Woman"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_Travel"
+        style="@style/Category_text_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@mipmap/ic_travel_draw"
+        android:background="@color/plane_bg"
+        android:text="@string/travel_text"
+        app:layout_constraintStart_toEndOf="@id/tv_Baby"
+        app:layout_constraintTop_toBottomOf="@id/tv_Man"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_Baby" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_Tech"
+        style="@style/Category_text_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/phone_bg"
+        android:drawableTop="@mipmap/ic_technic_foreground"
+        android:text="@string/technic_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Baby"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_Food_and_Drink"
+        style="@style/Category_text_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@mipmap/ic_food_foreground"
+        android:text="@string/food_drink_text"
+        android:background="@color/food_drink_bg"
+        app:layout_constraintStart_toEndOf="@id/tv_Tech"
+        app:layout_constraintTop_toBottomOf="@id/tv_Travel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
