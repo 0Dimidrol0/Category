@@ -1,6 +1,7 @@
 package com.example.category
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.category.fragments.CategoryFragment
@@ -13,5 +14,6 @@ class MainActivity : AppCompatActivity() {
         categoryFragment = CategoryFragment()
         supportFragmentManager.beginTransaction().add(R.id.container, categoryFragment, "A")
             .addToBackStack("A").commit()
+        var t = TextView(applicationContext)
     }
 }

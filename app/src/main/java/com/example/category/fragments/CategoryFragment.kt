@@ -7,7 +7,13 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.example.category.R
-import com.example.category.Res.Constants.Companion.CRAFT_KEY
+import com.example.category.fragments.Constants.Companion.CRAFT_KEY
+import com.example.category.fragments.Constants.Companion.BABY
+import com.example.category.fragments.Constants.Companion.FOOD
+import com.example.category.fragments.Constants.Companion.MAN
+import com.example.category.fragments.Constants.Companion.TECH
+import com.example.category.fragments.Constants.Companion.TRAVEL
+import com.example.category.fragments.Constants.Companion.WOMAN
 
 class CategoryFragment : Fragment() {
     private lateinit var womanButton: AppCompatTextView
@@ -45,27 +51,27 @@ class CategoryFragment : Fragment() {
 
     private fun initListeners() {
         womanButton.setOnClickListener {
-            newInstance(CRAFT_KEY, "Woman")
+            newInstance(CRAFT_KEY, WOMAN)
             nextFragment()
         }
         manButton.setOnClickListener {
-            newInstance(CRAFT_KEY, "Man")
+            newInstance(CRAFT_KEY, MAN)
             nextFragment()
         }
         babyButton.setOnClickListener {
-            newInstance(CRAFT_KEY, "Baby")
+            newInstance(CRAFT_KEY, BABY)
             nextFragment()
         }
         travelButton.setOnClickListener {
-            newInstance(CRAFT_KEY, "Travel")
+            newInstance(CRAFT_KEY, TRAVEL)
             nextFragment()
         }
         technicButton.setOnClickListener {
-            newInstance(CRAFT_KEY, "Technic")
+            newInstance(CRAFT_KEY, TECH)
             nextFragment()
         }
         foodButton.setOnClickListener {
-            newInstance(CRAFT_KEY, "Food")
+            newInstance(CRAFT_KEY, FOOD)
             nextFragment()
         }
     }
