@@ -6,7 +6,7 @@
     android:id="@+id/Craft_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.CraftFragment">
+    tools:context=".fragments.CraftFragment">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/Iv_logo"

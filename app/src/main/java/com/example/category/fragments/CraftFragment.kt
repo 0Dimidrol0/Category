@@ -1,7 +1,8 @@
-package com.example.category.Fragments
+package com.example.category.fragments
 
 
 import android.annotation.SuppressLint
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,6 +13,12 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.utils.widget.ImageFilterView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.example.category.R
 import com.example.category.Res.Constants.Companion.CRAFT_KEY
 
@@ -63,8 +70,36 @@ class CraftFragment : Fragment() {
 
     private fun setCategory(category: String) {
         when (category) {
-            "Women" -> view.run {
-                craftLogo.setImageDrawable(resources.getDrawable(R.mipmap.ic_woman_foreground))
+            "Woman" -> view.run {
+//                Picasso.get().load("https://picsum.photos/200/300").into(craftLogo)
+                Glide.with(requireContext())
+                    .load("https://picsum.photos/200/300")
+                    .listener(object : RequestListener<Drawable> {
+                        override fun onLoadFailed(
+                            e: GlideException?,
+                            model: Any?,
+                            target: Target<Drawable>?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            TODO("Not yet implemented")
+                        }
+
+                        override fun onResourceReady(
+                            resource: Drawable?,
+                            model: Any?,
+                            target: Target<Drawable>?,
+                            dataSource: DataSource?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            TODO("Not yet implemented")
+                        }
+                    })
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .into(craftLogo)
+
+//                craftLogo.setImageDrawable(resources.getDrawable(R.mipmap.ic_woman_foreground))
+//                craftLogo.setImageURI("https://picsum.photos/200/300".toUri())
                 craftName.text = resources.getString(R.string.woman_text)
                 craftRoot.setBackgroundColor(resources.getColor(R.color.women_bg))
                 craftAbout.text = resources.getString(R.string.woman_about_text)
