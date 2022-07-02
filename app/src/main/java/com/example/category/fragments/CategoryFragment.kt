@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.example.category.R
-import com.example.category.fragments.Constants.Companion.CRAFT_KEY
 import com.example.category.fragments.Constants.Companion.BABY
 import com.example.category.fragments.Constants.Companion.FOOD
 import com.example.category.fragments.Constants.Companion.MAN
@@ -22,7 +21,6 @@ class CategoryFragment : Fragment() {
     private lateinit var travelButton: AppCompatTextView
     private lateinit var technicButton: AppCompatTextView
     private lateinit var foodButton: AppCompatTextView
-    private lateinit var craftFragment: Fragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,17 +28,17 @@ class CategoryFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_category, container, false)
-        initVariables(view)
+        initView(view)
+        initListeners()
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initListeners()
+
     }
 
-    private fun initVariables(view: View) {
-        craftFragment = CraftFragment()
+    private fun initView(view: View) {
         womanButton = view.findViewById(R.id.tv_Woman)
         manButton = view.findViewById(R.id.tv_Man)
         babyButton = view.findViewById(R.id.tv_Baby)
@@ -51,41 +49,29 @@ class CategoryFragment : Fragment() {
 
     private fun initListeners() {
         womanButton.setOnClickListener {
-            newInstance(CRAFT_KEY, WOMAN)
-            nextFragment()
+            goToCraftFragment(WOMAN)
         }
         manButton.setOnClickListener {
-            newInstance(CRAFT_KEY, MAN)
-            nextFragment()
+            goToCraftFragment(MAN)
         }
         babyButton.setOnClickListener {
-            newInstance(CRAFT_KEY, BABY)
-            nextFragment()
+            goToCraftFragment(BABY)
         }
         travelButton.setOnClickListener {
-            newInstance(CRAFT_KEY, TRAVEL)
-            nextFragment()
+            goToCraftFragment(TRAVEL)
         }
         technicButton.setOnClickListener {
-            newInstance(CRAFT_KEY, TECH)
-            nextFragment()
+            goToCraftFragment(TECH)
         }
         foodButton.setOnClickListener {
-            newInstance(CRAFT_KEY, FOOD)
-            nextFragment()
+            goToCraftFragment(FOOD)
         }
     }
 
-    private fun nextFragment() {
+    private fun goToCraftFragment(category: String) {
         requireActivity().supportFragmentManager.beginTransaction()
-            .add(R.id.container, craftFragment, "B").addToBackStack("A").commit()
-    }
-
-    private fun newInstance(key: String, category: String) {
-        craftFragment.apply {
-            arguments = Bundle().apply {
-                putString(key, category)
-            }
-        }
+            .add(R.id.container, CraftFragment.newInstance(category), "B")
+            .addToBackStack("A")
+            .commit()
     }
 }

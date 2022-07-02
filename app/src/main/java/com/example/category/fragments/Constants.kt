@@ -8,6 +8,6 @@ class Constants {
         const val TRAVEL = "travel"
         const val FOOD = "food"
         const val TECH = "tech"
-        const val CRAFT_KEY = "Craft"
+        const val CATEGORY_KEY = "category"
     }
 }

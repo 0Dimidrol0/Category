@@ -21,8 +21,8 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.category.R
-import com.example.category.fragments.Constants.Companion.CRAFT_KEY
 import com.example.category.fragments.Constants.Companion.BABY
+import com.example.category.fragments.Constants.Companion.CATEGORY_KEY
 import com.example.category.fragments.Constants.Companion.FOOD
 import com.example.category.fragments.Constants.Companion.MAN
 import com.example.category.fragments.Constants.Companion.TECH
@@ -41,7 +41,7 @@ class CraftFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            crafting = it.getString(CRAFT_KEY)
+            crafting = it.getString(CATEGORY_KEY)
         }
         Log.d("crafting:", "$crafting")
     }
@@ -154,5 +154,24 @@ class CraftFragment : Fragment() {
                 return@run
             }
         }
+    }
+
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment AddFragment.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(category: String) =
+            CraftFragment().apply {
+                arguments = Bundle().apply {
+                    putString(CATEGORY_KEY, category)
+                }
+            }
     }
 }
