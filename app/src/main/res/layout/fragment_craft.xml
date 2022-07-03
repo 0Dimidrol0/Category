@@ -6,7 +6,7 @@
     android:id="@+id/Craft_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.CraftFragment">
+    tools:context=".fragments.CraftFragment">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/Iv_logo"
@@ -15,7 +15,8 @@
         android:layout_margin="@dimen/dimen_50"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:src="@mipmap/ic_launcher"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_name"
@@ -27,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Iv_logo"
-        />
+        tools:text="@tools:sample/first_names"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_about"
@@ -39,7 +40,7 @@
         app:layout_constraintBottom_toTopOf="@id/tv_More"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        tools:text="@string/woman_about_text"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_More"
@@ -51,7 +52,7 @@
         app:layout_constraintBottom_toTopOf="@id/btn_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        tools:text="@tools:sample/lorem"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_back"
