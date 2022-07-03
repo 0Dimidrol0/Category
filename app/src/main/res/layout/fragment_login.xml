@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_fragment_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_color"
+    tools:context=".exam.LoginFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_instagram_name"
+        style="@style/name_text_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/instagram_text"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_30"
+        app:layout_constraintStart_toStartOf="@id/gl_start_30"
+        app:layout_constraintTop_toBottomOf="@id/gl_top_150" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_username_teg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_30"
+        android:text="@string/username_teg_text"
+        app:layout_constraintStart_toStartOf="@id/ed_username"
+        app:layout_constraintBottom_toTopOf="@id/ed_username" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_password_teg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_30"
+        android:text="@string/password_teg"
+        app:layout_constraintStart_toStartOf="@id/ed_password"
+        app:layout_constraintBottom_toTopOf="@id/ed_password" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ed_username"
+        style="@style/editText_style"
+        android:layout_marginHorizontal="@dimen/dimen_10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_50"
+        android:drawableStart="@drawable/ic_baseline_person_outline_24"
+        android:hint="@string/username_hint"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_30"
+        app:layout_constraintStart_toStartOf="@id/gl_start_30"
+        app:layout_constraintTop_toBottomOf="@id/tv_instagram_name" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ed_password"
+        style="@style/editText_style"
+        android:layout_width="0dp"
+        android:inputType="textPassword"
+        android:layout_marginTop="@dimen/dimen_30"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_10"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:hint="@string/password_hint"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_30"
+        app:layout_constraintStart_toStartOf="@id/gl_start_30"
+        app:layout_constraintTop_toBottomOf="@id/ed_username" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_forgot"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password_text"
+        app:layout_constraintEnd_toEndOf="@id/ed_password"
+        app:layout_constraintTop_toBottomOf="@id/ed_password"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:background="@color/Button_Background_color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:text="@string/log_in_btn"
+        android:layout_marginTop="@dimen/dimen_100"
+        app:layout_constraintTop_toBottomOf="@id/ed_password"
+        app:layout_constraintStart_toStartOf="@id/gl_start_30"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_30"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_top_150"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/dimen_150" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dimen_30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dimen_30" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

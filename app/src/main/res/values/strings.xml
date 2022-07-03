@@ -22,4 +22,17 @@ the circumcision heals (1–2 weeks)
     <string name="technic_about_text">Technical Expertise</string>
     <string name="technic_more_text">For 75 years, Technic has been a global supplier of specialty chemicals</string>
     <string name="go_back_text">Go back</string>
+    <string name="instagram_text">Instagram</string>
+    <string name="username_hint">UserName</string>
+    <string name="username_teg_text">username</string>
+    <string name="password_teg">password</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password_text">Forgot password?</string>
+    <string name="log_in_btn">log in</string>
+    <string name="welcome_dear_text">Welcome \nDear</string>
+    <string name="quick_actions_text">Quick Actions</string>
+    <string name="home_text">Home</string>
+    <string name="party_text">Party</string>
+    <string name="cinema_text">Cinema</string>
+    <string name="add_text">Add New</string>
 </resources>

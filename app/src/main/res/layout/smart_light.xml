@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraint_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_top_margin"
+        android:layout_marginStart="@dimen/margin_start"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/quick_actions_text"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/dimen_sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_home"
+        android:background="@drawable/rectangle_5dp"
+        app:srcCompat="@drawable/ic_home"
+        android:padding="@dimen/dimen_17"
+        android:layout_marginStart="@dimen/margin_icon_home"
+        android:layout_marginTop="@dimen/margin_top_icon_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_party"
+        android:background="@drawable/rectangle_5dp"
+        app:srcCompat="@drawable/ic_party"
+        android:padding="@dimen/dimen_19"
+        android:layout_marginStart="@dimen/dimen_27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/icon_home"
+        app:layout_constraintStart_toEndOf="@id/icon_home"
+        app:layout_constraintBottom_toBottomOf="@id/icon_home"
+         />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_cinema"
+        android:background="@drawable/rectangle_5dp"
+        app:srcCompat="@drawable/ic_cinema"
+        android:layout_marginStart="@dimen/dimen_27dp"
+        android:padding="@dimen/dimen_17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/icon_party"
+        app:layout_constraintStart_toEndOf="@id/icon_party"
+        app:layout_constraintBottom_toBottomOf="@id/icon_party"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_add_new"
+        android:background="@drawable/rectangle_5dp"
+        app:srcCompat="@drawable/ic_add"
+        android:padding="@dimen/dimen_17"
+        android:layout_marginStart="@dimen/dimen_27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/icon_cinema"
+        app:layout_constraintBottom_toBottomOf="@id/icon_cinema"
+        app:layout_constraintStart_toEndOf="@id/icon_cinema"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_home"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/dimen_sp_13"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text = "@string/home_text"
+        app:layout_constraintTop_toBottomOf="@id/icon_home"
+        app:layout_constraintStart_toStartOf="@id/icon_home"
+        app:layout_constraintEnd_toEndOf="@id/icon_home"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_party"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/dimen_sp_13"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text = "@string/party_text"
+        app:layout_constraintTop_toBottomOf="@id/icon_party"
+        app:layout_constraintStart_toStartOf="@id/icon_party"
+        app:layout_constraintEnd_toEndOf="@id/icon_party"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cinema"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/dimen_sp_13"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text = "@string/cinema_text"
+        app:layout_constraintTop_toBottomOf="@id/icon_cinema"
+        app:layout_constraintStart_toStartOf="@id/icon_cinema"
+        app:layout_constraintEnd_toEndOf="@id/icon_cinema"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_add"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/dimen_sp_13"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:text = "@string/add_text"
+        app:layout_constraintTop_toBottomOf="@id/icon_add_new"
+        app:layout_constraintStart_toStartOf="@id/icon_add_new"
+        app:layout_constraintEnd_toEndOf="@id/icon_add_new"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
