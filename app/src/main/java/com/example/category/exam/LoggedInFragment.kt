@@ -37,6 +37,7 @@ class LoggedInFragment : Fragment() {
     }
 
     private fun addNameToWelcomeText(){
+// TODO String.format() nayi sa kam hishacra dasin kasem
         welcomeText.text = welcomeText.text.toString() + userName
     }
 

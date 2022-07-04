@@ -16,7 +16,9 @@
     <color name="onClick_bg">#2d999f</color>
     <color name="Background_StartColor">#822889</color>
     <color name="Background_EndColor">#2F0D83</color>
+<!--    TODO  don`t use capital letters, menak poqratarer gri-->
     <color name="Button_Background_color">#5F1CA1</color>
+    <!--    TODO  buttoner shat klinen appum:  login_button_background_color-->
     <color name="title_color">#414141</color>
 
 </resources>

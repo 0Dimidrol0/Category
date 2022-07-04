@@ -29,6 +29,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun initView(view: View) {
+// TODO    edUsername = requireView().findViewById(R.id.ed_username) initView u initListeners kanchi onViewCreate-i mej
         edUsername = view.findViewById(R.id.ed_username)
         edpassword = view.findViewById(R.id.ed_password)
         btnLogIn = view.findViewById(R.id.btn_login)
@@ -36,14 +37,19 @@ class LoginFragment : Fragment() {
 
     private fun initListeners() {
         btnLogIn.setOnClickListener {
+// TODO sranq verev@ haytarari lateini-ov
             val username = edUsername.text.toString().trim()
             val password = edpassword.text.toString().trim()
             if (username.checkUserName() && password.checkPassword()) {
+// TODO arandzin method fun goToMainPage
                 requireActivity().supportFragmentManager.beginTransaction()
                     .add(
                         R.id.container, LoggedInFragment.newInstance(username)
                     ).addToBackStack(LOGIN_BACK_STACK)
                     .commit()
+//  TODO Toast@ myus fragment-um petqa bacer, word-i file i mej graca
+//  TODO "You have been successfully logged in" get from resource
+
                 Toast.makeText(
                     requireContext(),
                     "You have been successfully logged in",
@@ -57,6 +63,7 @@ class LoginFragment : Fragment() {
         return if (isNotEmpty() && this[0].isUpperCase() && length > 7) {
             true
         } else {
+//  TODO "Username is not valid!" get from resource
             Snackbar.make(
                 requireActivity().findViewById(R.id.activity_root),
                 "Username is not valid!",
@@ -73,6 +80,7 @@ class LoginFragment : Fragment() {
         } else {
             Snackbar.make(
                 requireActivity().findViewById(R.id.activity_root),
+//  TODO "Password is not valid!" get from resource
                 "Password is not valid!",
                 Snackbar.LENGTH_LONG
             ).show()

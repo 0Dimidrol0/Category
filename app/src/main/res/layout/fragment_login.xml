@@ -8,6 +8,7 @@
     android:background="@drawable/background_gradient_color"
     tools:context=".exam.LoginFragment">
 
+<!-- TODO font@ arden style-ov tvel es   -->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_instagram_name"
         style="@style/name_text_style"
@@ -37,6 +38,9 @@
         app:layout_constraintStart_toStartOf="@id/ed_password"
         app:layout_constraintBottom_toTopOf="@id/ed_password" />
 
+<!--  TODO drawable-i icon-i anun@  ic_person  -->
+<!--  TODO inputType chka, vor@ beruma xndri, erb enter es anum nor toxa ijnum -->
+<!--  TODO layout_marginHorizontal el petq chi, sranq kapel es Forgot pass-in, isk da el gcic shexvela -->
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_username"
         style="@style/editText_style"
@@ -50,6 +54,7 @@
         app:layout_constraintStart_toStartOf="@id/gl_start_30"
         app:layout_constraintTop_toBottomOf="@id/tv_instagram_name" />
 
+    <!--  TODO drawable-i icon-i anun@  ic_lock  -->
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_password"
         style="@style/editText_style"
