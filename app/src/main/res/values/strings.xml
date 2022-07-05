@@ -35,4 +35,7 @@ the circumcision heals (1–2 weeks)
     <string name="party_text">Party</string>
     <string name="cinema_text">Cinema</string>
     <string name="add_text">Add New</string>
+    <string name="snack_bar_password_text">Password is not valid!</string>
+    <string name="snack_bar_user_text">Username is not valid!</string>
+    <string name="toast_success_text">You have been successfully logged in!</string>
 </resources>

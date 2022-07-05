@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
@@ -16,6 +15,8 @@ class LoginFragment : Fragment() {
     private lateinit var edUsername: AppCompatEditText
     private lateinit var edpassword: AppCompatEditText
     private lateinit var btnLogIn: AppCompatButton
+    private lateinit var username: String
+    private lateinit var password: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,13 +24,17 @@ class LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
-        initView(view)
-        initListeners()
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initView(view)
+        initListeners()
+
+    }
+
     private fun initView(view: View) {
-// TODO    edUsername = requireView().findViewById(R.id.ed_username) initView u initListeners kanchi onViewCreate-i mej
         edUsername = view.findViewById(R.id.ed_username)
         edpassword = view.findViewById(R.id.ed_password)
         btnLogIn = view.findViewById(R.id.btn_login)
@@ -37,36 +42,30 @@ class LoginFragment : Fragment() {
 
     private fun initListeners() {
         btnLogIn.setOnClickListener {
-// TODO sranq verev@ haytarari lateini-ov
-            val username = edUsername.text.toString().trim()
-            val password = edpassword.text.toString().trim()
+            username = edUsername.text.toString().trim()
+            password = edpassword.text.toString().trim()
             if (username.checkUserName() && password.checkPassword()) {
-// TODO arandzin method fun goToMainPage
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .add(
-                        R.id.container, LoggedInFragment.newInstance(username)
-                    ).addToBackStack(LOGIN_BACK_STACK)
-                    .commit()
-//  TODO Toast@ myus fragment-um petqa bacer, word-i file i mej graca
-//  TODO "You have been successfully logged in" get from resource
-
-                Toast.makeText(
-                    requireContext(),
-                    "You have been successfully logged in",
-                    Toast.LENGTH_LONG
-                ).show()
+                goToMainPage()
             }
         }
+    }
+
+    private fun goToMainPage() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .add(
+                R.id.container, LoggedInFragment.newInstance(username)
+            ).addToBackStack(LOGIN_BACK_STACK)
+            .commit()
+        cleanEditTexts()
     }
 
     private fun String.checkUserName(): Boolean {
         return if (isNotEmpty() && this[0].isUpperCase() && length > 7) {
             true
         } else {
-//  TODO "Username is not valid!" get from resource
             Snackbar.make(
                 requireActivity().findViewById(R.id.activity_root),
-                "Username is not valid!",
+                getString(R.string.snack_bar_user_text),
                 Snackbar.LENGTH_LONG
             ).show()
             false
@@ -80,11 +79,15 @@ class LoginFragment : Fragment() {
         } else {
             Snackbar.make(
                 requireActivity().findViewById(R.id.activity_root),
-//  TODO "Password is not valid!" get from resource
-                "Password is not valid!",
+                getString(R.string.snack_bar_password_text),
                 Snackbar.LENGTH_LONG
             ).show()
             false
         }
+    }
+
+    private fun cleanEditTexts(){
+        edUsername.setText("")
+        edpassword.setText("")
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.example.category.R
@@ -32,13 +33,25 @@ class LoggedInFragment : Fragment() {
         return  view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        successToastCall()
+    }
+
     private fun initView(view: View){
         welcomeText = view.findViewById(R.id.tv_welcome)
     }
 
     private fun addNameToWelcomeText(){
-// TODO String.format() nayi sa kam hishacra dasin kasem
-        welcomeText.text = welcomeText.text.toString() + userName
+        welcomeText.text = String.format("Welcome \nDear %s",userName)
+    }
+
+    private fun successToastCall(){
+        Toast.makeText(
+            requireContext(),
+            getString(R.string.toast_success_text),
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     companion object {
